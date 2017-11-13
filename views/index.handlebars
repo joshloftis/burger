@@ -1,0 +1,29 @@
+<div class="container">
+  <img src='assets/img/Shack-Burger-PNG.png' height='225' alt='burger image'>
+  <h3>Eat-Da-Buger</h3>
+  <div class="row">
+    <div class="col s12 m6">
+      <h4>Burgers to be Devoured</h4>
+      {{#each burger}}
+        {{#unless devoured}}
+          <p>{{this.id}}: {{this.burger_name}} <button id="devour-btn" data-id="{{id}}">DEVOUR!</button></p>
+        {{/unless}}
+      {{/each}}
+    </div>
+    <div class="col s12 m6">
+      <h4>Devoured Burgers</h4>
+      {{#each burger}}
+        {{#if devoured}}
+          <p>{{this.id}}: {{this.burger_name}}</p>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <form class="create-burger">
+        <textarea id="text-area" type="text" placeholder="Add a burger here..."></textarea>
+        <button id="add-burger" type="submit">Add Burger</button>
+      </form>
+    </div>
+</div>

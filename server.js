@@ -1,6 +1,6 @@
 const express = require('express');
 const method_override = require('method-override');
-const body_parser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,4 +21,4 @@ var routes = require("./controllers/burgers_controllers.js");
 
 app.use("/", routes);
 
-app.listen(port);
+app.listen(PORT);

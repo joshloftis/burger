@@ -24,7 +24,7 @@ const help = {
 };
 
 const orm = {
-  selectAll: (table, cd) => {
+  selectAll: (table, cb) => {
     let query = `SELECT * FROM ${table};`;
     connection.query(query, function(err, res){
       if (err) throw err;
