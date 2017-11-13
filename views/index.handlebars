@@ -1,12 +1,16 @@
 <div class="container">
-  <img src='assets/img/Shack-Burger-PNG.png' height='225' alt='burger image'>
-  <h3>Eat-Da-Buger</h3>
+  <img id="burger-image" src='assets/img/Shack-Burger-PNG.png' height='225' alt='burger image'>
+  <h3 class="center-align">Eat-Da-Buger</h3>
   <div class="row">
     <div class="col s12 m6">
       <h4>Burgers to be Devoured</h4>
       {{#each burger}}
         {{#unless devoured}}
-          <p>{{this.id}}: {{this.burger_name}} <button id="devour-btn" data-id="{{id}}">DEVOUR!</button></p>
+          <p>
+            {{this.id}}:
+            {{this.burger_name}}
+            <a class="waves-effect waves-teal btn-flat devour-btn" data-id="{{id}}">Devour</a>
+          </p>
         {{/unless}}
       {{/each}}
     </div>
@@ -21,9 +25,9 @@
   </div>
   <div class="row">
     <div class="col s12">
-      <form class="create-burger">
-        <textarea id="text-area" type="text" placeholder="Add a burger here..."></textarea>
-        <button id="add-burger" type="submit">Add Burger</button>
+      <form id="add-burger-area" class="create-burger">
+        <textarea id="text-area" class="z-depth-3" type="text" placeholder="Add a burger here..."></textarea>
+        <a id="add-burger" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
       </form>
     </div>
 </div>

@@ -1,19 +1,20 @@
 $(function(){
-  $('#devour-btn').on('click', function(){
+  $('.devour-btn').on('click', function(){
     let id = $(this).data('id');
     let isDevoured = {
       devoured: 1
     };
-    $.ajax(`/api/burger/${id}`, {
+    console.log(id);
+    $.ajax('/api/burger/' + id, {
       method: 'PUT',
       data: isDevoured
     }).then(function(){
+      console.log(id);
       location.reload();
     });
   });
 
   $('#add-burger').on('click', function(event){
-    event.preventDefault();
     let newBurger = {
       name: $('#text-area').val().trim(),
       devoured: 0

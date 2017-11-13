@@ -26,23 +26,24 @@ const help = {
 const orm = {
   selectAll: (table, cb) => {
     let query = `SELECT * FROM ${table};`;
-    connection.query(query, function(err, res){
+    connection.query(query, function(err, result){
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   },
   insertOne: (table, cols, vals, cb) => {
     let query = `INSERT INTO ${table} (${cols.toString()}) VALUES (${help.qMarks(vals.length)})`;
-    connection.query(query, vals, function(err, res){
+    connection.query(query, vals, function(err, result){
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   },
   updateOne: (table, objColVals, condition, cb) => {
     let query = `UPDATE ${table} SET ${help.objToSql(objColVals)} WHERE ${condition}`;
-    connection.query(query, function(err, res){
+    console.log(query);
+    connection.query(query, function(err, result){
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   }
 };
