@@ -31,7 +31,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b733', end
   font-size: 11px;
 }
 .devour-btn:hover {
-  background: lightgrey;
+  background: #a5d6a7;
 }
 .burgers-content {
   background: rgba(255, 255, 255, 0.6);
