@@ -42,9 +42,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b733', end
   margin-right: -0.75rem;
   margin-bottom: 10px;
 }
+.row.is-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.is-flex > .col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
 .need-border {
   border-right: 1px solid rgba(255, 255, 255, 0.7);
 }
+/*.need-border:nth-child(2) {
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+}*/
 .title-text {
   font-family: 'Permanent Marker', cursive;
   margin-top: 110px;
