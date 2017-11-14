@@ -13,6 +13,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b733', end
 }
 #text-area {
   padding: 20px;
+  padding-top: 37px;
   border-radius: 4px;
   border: none;
   height: 100px;
@@ -66,9 +67,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b733', end
 .need-border {
   border-right: 1px solid rgba(255, 255, 255, 0.7);
 }
-/*.need-border:nth-child(2) {
-  border-left: 1px solid rgba(255, 255, 255, 0.7);
-}*/
 .title-text {
   font-family: 'Permanent Marker', cursive;
   margin-top: 110px;
@@ -77,9 +75,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b733', end
   width: 300px;
   margin-left: -30px;
 }
+.burger-name-span {
+  display: inline-block;
+  text-indent: -1.1em;
+  padding-left: 1.1em;
+}
 
 @media only screen and (max-width: 600px) {
   .need-border {
     border-right: none;
+  }
+  .title-text {
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 65px;
+    font-size: 2em;
+  }
+  #burger-image {
+    width: 175px;
+    margin-left: -30px;
   }
 }
