@@ -5,6 +5,7 @@ background: -moz-radial-gradient(center, ellipse cover, #f7b733 0%, #fc4a1a 100%
 background: -webkit-radial-gradient(center, ellipse cover, #f7b733 0%,#fc4a1a 100%); /* Chrome10-25,Safari5.1-6 */
 background: radial-gradient(ellipse at center, #f7b733 0%,#fc4a1a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b733', endColorstr='#fc4a1a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+overflow-x: hidden;
 }
 #add-burger-area {
   display: block;
