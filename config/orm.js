@@ -40,7 +40,13 @@ const orm = {
   },
   updateOne: (table, objColVals, condition, cb) => {
     let query = `UPDATE ${table} SET ${help.objToSql(objColVals)} WHERE ${condition}`;
-    console.log(query);
+    connection.query(query, function(err, result){
+      if (err) throw err;
+      cb(result);
+    });
+  },
+  deleteOne: (table, condition, cb) => {
+    let query = `DELETE FROM ${table} WHERE ${condition}`;
     connection.query(query, function(err, result){
       if (err) throw err;
       cb(result);

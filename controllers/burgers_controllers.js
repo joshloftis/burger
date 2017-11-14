@@ -18,8 +18,7 @@ router.post('/api/burger', function(req, res){
 });
 
 router.put('/api/burger/:id', function(req, res){
-  let condition = "id = " + req.params.id;
-  console.log("condition", condition);
+  let condition = `id = ${req.params.id}`;
   burger.update({devoured: req.body.devoured}, condition, function(data){
     if (data.changedRows === 0) {
       return res.status(404).end();
@@ -29,5 +28,15 @@ router.put('/api/burger/:id', function(req, res){
   });
 });
 
+router.delete('/api/burger/:id', function(req, res){
+  let condition = `id = ${req.params.id}`;
+  burger.delete(condition, function(data){
+    if (data.affectedRows === 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
 
 module.exports = router;

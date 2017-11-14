@@ -9,12 +9,11 @@ $(function(){
       method: 'PUT',
       data: isDevoured
     }).then(function(){
-      console.log(id);
       location.reload();
     });
   });
 
-  $('#add-burger').on('click', function(event){
+  $('#add-burger').on('click', function(){
     let newBurger = {
       name: $('#text-area').val().trim(),
       devoured: 0
@@ -22,6 +21,15 @@ $(function(){
     $.ajax(`/api/burger`, {
       method: 'POST',
       data: newBurger
+    }).then(function(){
+      location.reload();
+    });
+  });
+
+  $('.delete-btn').on('click', function(){
+    let id = $(this).data('id');
+    $.ajax('/api/burger/' + id, {
+      method: 'DELETE'
     }).then(function(){
       location.reload();
     });
