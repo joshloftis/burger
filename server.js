@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
 
-var app = express();
+const app = express();
 
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -17,8 +17,8 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controllers.js");
+const router = require("./controllers/burgers_controllers.js");
 
-app.use("/", routes);
+app.use("/", router);
 
 app.listen(PORT);
